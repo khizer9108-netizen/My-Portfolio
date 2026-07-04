@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khizer Ahmad | Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="Pictures/favicon1.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">KA.</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#home" class="hover:text-white">Home</a>
+                <a href="#interests" class="hover:text-white">Interests</a>
+                <a href="#about" class="hover:text-white">About</a>
+                <a href="#academics" class="hover:text-white">Academics</a>
+                <a href="#portfolio" class="hover:text-white">Portfolio</a>
+                <a href="#blog" class="hover:text-white">Blog</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <h1 class="text-3xl md:text-6xl font-bold mb-6">
+            Khizer Ahmad<br>
+            <span class="text-2xl md:text-4xl text-slate-400 mt-4 block">Aspiring Software Engineer & 3D Designer</span>
+        </h1>
+        <p class="text-lg md:text-2xl text-slate-300 max-w-3xl mb-12">
+            Grade 12 student in Saudi Arabia, building solutions at the intersection of technology and creativity.
+        </p>
+        <a href="#interests" class="animate-bounce p-4 rounded-full border border-slate-700 hover:bg-slate-800 transition-colors">
+            <i class="fas fa-chevron-down text-blue-400"></i>
+        </a>
+    </section>
+
+    <section id="interests" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16">Interests</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card rounded-2xl p-8 reveal">
+                    <h4 class="text-2xl font-semibold mb-4 text-center text-blue-400"><i class="fas fa-microchip mr-2"></i> Technology</h4>
+                    <p class="text-slate-300 text-center">Exploring the latest advancements in AI, smart systems, and digital infrastructure.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 reveal">
+                    <h4 class="text-2xl font-semibold mb-4 text-center text-violet-400"><i class="fas fa-code mr-2"></i> Programming</h4>
+                    <p class="text-slate-300 text-center">Building functional web solutions and logical scripts to solve real-world problems.</p>
+                </div>
+                <div class="glass-card rounded-2xl p-8 reveal">
+                    <h4 class="text-2xl font-semibold mb-4 text-center text-emerald-400"><i class="fas fa-palette mr-2"></i> Designing</h4>
+                    <p class="text-slate-300 text-center">Combining aesthetic appeal with usability for intuitive visual experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto glass-card rounded-2xl p-12 reveal">
+            <h3 class="text-3xl font-bold mb-6">About Me</h3>
+            <p class="text-slate-300 leading-relaxed text-lg mb-4">
+                I am a Grade 12 student and a developer driven by passion for solving real-world and complex tasks through technology. I am an intersection of a software engineer and a 3D designer with an interest in the aviation industry. Whether I am developing a simple yet fun game in Godot, making working webpages integrated with the latest tech, or modeling in Blender. 
+            </p>
+            <p class="text-slate-300 leading-relaxed text-lg">
+                Beyond the virtual world, I am a dedicated student currently navigating through Cambridge A-Level curriculum and the SAT. I love aircrafts, which is why I am making my way into my school's Asian Regional Space Settlement team, where students with skills develop real-world human settlements.
+            </p>
+        </div>
+    </section>
+
+    <section id="academics" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16">Academics</h3>
+            <div class="glass-card rounded-2xl p-8 reveal">
+                <h4 class="text-2xl font-bold mb-6 text-blue-400">IGCSE Grades</h4>
+                <ul class="space-y-4">
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>English as a Second Language</span> <span class="font-bold">A</span></li>
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>Mathematics</span> <span class="font-bold">A*</span></li>
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>Physics</span> <span class="font-bold">A*</span></li>
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>Chemistry</span> <span class="font-bold">A*</span></li>
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>Business Studies</span> <span class="font-bold">A*</span></li>
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>Computer Science</span> <span class="font-bold">A*</span></li>
+                    <li class="flex justify-between border-b border-slate-700 pb-2"><span>Urdu as a Second Language</span> <span class="font-bold">A*</span></li>
+                </ul>
+                <div class="mt-8 pt-6 border-t border-slate-700">
+                    <p class="text-xl">Current High School Academic Grade: <span class="text-3xl font-bold text-emerald-400">94.2%</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16">Certificates & Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden reveal">
+                    <img src="Pictures/IMG_1414.jpg" alt="Daydream Hackathon" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold mb-2">Daydream Hackathon</h4>
+                        <p class="text-slate-400 text-sm">Participated in the Daydream Khobar hackathon event.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden reveal">
+                    <img src="Pictures/IMG_1413.jpg" alt="Volunteer Certificate" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold mb-2">National Volunteer</h4>
+                        <p class="text-slate-400 text-sm">Recognized service contribution.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden reveal">
+                    <img src="Pictures/ProjectSpaceStation1.jpg" alt="Space Station" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold mb-2">Space Station Model</h4>
+                        <p class="text-slate-400 text-sm">3D Project conceptualization.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-2xl overflow-hidden reveal">
+                    <img src="Pictures/geek4geek.jpg" alt="GeeksforGeeks Certificate" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h4 class="text-xl font-bold mb-2">GeeksforGeeks</h4>
+                        <p class="text-slate-400 text-sm">Participated in competitive programming challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16">Blog</h3>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="glass-card rounded-2xl p-8 reveal">
+                    <span class="text-blue-400 font-medium">October 2023</span>
+                    <h4 class="text-2xl font-bold mt-2 mb-4">My Journey into Space Settlement Design</h4>
+                    <p class="text-slate-300 leading-relaxed">
+                        Reflecting on my experience joining the Asian Regional Space Settlement team and how it's shaping my perspective on engineering and human habitats.
+                    </p>
+                    <a href="my-blog1.html" class="inline-block mt-6 text-blue-400 hover:text-blue-300 font-semibold transition-colors">Read More &rarr;</a>
+                </div>
+                <div class="glass-card rounded-2xl p-8 reveal">
+                    <span class="text-blue-400 font-medium">June 2026</span>
+                    <h4 class="text-2xl font-bold mt-2 mb-4">Why I love Godot for Game Development</h4>
+                    <p class="text-slate-300 leading-relaxed">
+                        Why I chose Godot for my recent game projects and how its node-based system changed the way I think about code architecture.
+                    </p>
+                    <a href="godot-blog.html" class="inline-block mt-6 text-blue-400 hover:text-blue-300 font-semibold transition-colors">Read More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-4xl font-bold text-center mb-16">Get In Touch</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="https://www.linkedin.com/in/khizer-ahmad-khiz3r/" target="_blank" class="glass-card rounded-2xl p-8 reveal text-center hover:bg-slate-800 transition-all cursor-pointer">
+                    <i class="fab fa-linkedin text-4xl text-blue-400 mb-4"></i>
+                    <h4 class="text-xl font-semibold">LinkedIn</h4>
+                    <p class="text-slate-400">@khizer-ahmad-khiz3r</p>
+                </a>
+                <a href="https://wa.me/966537768837" target="_blank" class="glass-card rounded-2xl p-8 reveal text-center hover:bg-slate-800 transition-all cursor-pointer">
+                    <i class="fab fa-whatsapp text-4xl text-emerald-400 mb-4"></i>
+                    <h4 class="text-xl font-semibold">WhatsApp</h4>
+                    <p class="text-slate-400">+966 53 776 8837</p>
+                </a>
+                <a href="https://www.instagram.com/khiz3r999" target="_blank" class="glass-card rounded-2xl p-8 reveal text-center hover:bg-slate-800 transition-all cursor-pointer">
+                    <i class="fab fa-instagram text-4xl text-pink-500 mb-4"></i>
+                    <h4 class="text-xl font-semibold">Instagram</h4>
+                    <p class="text-slate-400">@khiz3r999</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        });
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            for(let i = 0; i < 2; i++) {
+                particles.push({
+                    x: mouse.x,
+                    y: mouse.y,
+                    size: Math.random() * 2 + 1,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    alpha: 1
+                });
+            }
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(p => p.alpha > 0);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.alpha -= 0.01;
+                ctx.fillStyle = `rgba(96, 165, 250, ${p.alpha})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        resize();
+        animate();
+    </script>
+</body>
+</html>

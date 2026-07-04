@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I love Godot | Khizer Ahmad</title>
+    <link rel="icon" type="image/jpeg" href="Pictures/favicon1.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Poppins', sans-serif; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen py-12 px-6">
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="max-w-3xl mx-auto glass-card rounded-2xl p-12">
+        <a href="index.html" class="text-blue-400 hover:text-blue-300 font-semibold mb-8 inline-block">&larr; Back to Portfolio</a>
+        <h1 class="text-4xl font-bold mb-6">Why I love Godot for Game Development</h1>
+        <p class="text-slate-400 mb-8">June 2026</p>
+        
+        <div class="prose prose-invert prose-slate max-w-none text-slate-300 leading-relaxed space-y-6">
+            <p>Godot, a free open-source game engine, is used to create 2D and 3D games. It has its own programming language too, known as GDScript. GDScript is very similar to Python; in fact, I would say that anyone who knows Python can learn GDScript in a day!</p>
+            
+            <p>I have always wanted to develop my own games. One day, at my school, a friend announced that a game developer hackathon was coming up. This was the moment I could finally try to make games. I must admit, I had very little knowledge about coding and designing, but in today’s world, we have powerful search engines, so it wasn’t an issue. Winning was not my main priority; it was the experience.</p>
+            
+            <p>As soon as I registered, I had to grab two friends, even though they weren't the most professional at this stuff. When I first opened Godot, it seemed complicated, but after the first week, I got the hang of it. The best part of Godot is that the interface is quite neat compared to other engines. It’s lightweight, so I had no issues on my not-so-powerful laptop.</p>
+            
+            <p>The best part is that it is open-source—no need to pay any money— so there are no annoying pop-ups asking the user to pay! The node and scene architecture is quite intuitive; for example, you can reuse a scene with just a few clicks.</p>
+            
+            <p>To sum it all up, Godot is a small yet extremely well-designed game engine that can work on most computers. If you're into game development and have never tried making a game, give Godot a try! You will love it.</p>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            for(let i = 0; i < 2; i++) {
+                particles.push({
+                    x: mouse.x,
+                    y: mouse.y,
+                    size: Math.random() * 2 + 1,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    alpha: 1
+                });
+            }
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(p => p.alpha > 0);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.alpha -= 0.01;
+                ctx.fillStyle = `rgba(96, 165, 250, ${p.alpha})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        resize();
+        animate();
+    </script>
+</body>
+</html>
